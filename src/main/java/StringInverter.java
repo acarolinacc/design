@@ -1,10 +1,9 @@
-public class StringInverter {
-    private String string;
+public class StringInverter implements StringTransformer{
 
     @Override
     public void execute(StringDrink drink) {
-        int size = drink.getText().length();
-        for (int i = size - 1; i >= 0;i--)
+        StringBuilder inverted = new StringBuilder(drink.getText());
+        inverted.reverse();
+        drink.setText(inverted.toString());
     }
-
 }
